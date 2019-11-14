@@ -7,7 +7,7 @@ class VehicleMaintenance(models.Model):
     user = models.ForeignKey('auth.User', blank=False, on_delete=models.CASCADE)
     vehicle = models.CharField(max_length=200, blank=False, null=False)
     task = models.CharField(max_length=200, blank=False, null=False)
-    notes = models.CharField(max_length=1000, blank=False, null=False)
+    notes = models.CharField(max_length=1000, blank=True, null=True)
     date = models.DateField(auto_now_add=True)
 
     # name = models.CharField(max_length=200, blank=False, null=False)
