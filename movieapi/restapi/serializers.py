@@ -1,9 +1,9 @@
-from movieapi.restapi.models import Movie 
+from movieapi.restapi.models import VehicleMaintenance 
 from rest_framework import serializers 
 
-class MovieSerializer(serializers.ModelSerializer):
+class VehicleMaintenanceSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Movie 
+        model = VehicleMaintenance 
         fields = ['id', 'name', 'rating']
 
     
