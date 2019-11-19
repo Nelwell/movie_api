@@ -8,6 +8,7 @@ class VehicleMaintenance(models.Model):
     vehicle = models.CharField(max_length=200, blank=False, null=False)
     location = models.CharField(max_length=200, blank=False, null="Self")
     service = models.CharField(max_length=200, blank=False, null=False)
+    mileage = models.IntegerField(blank=False, null=0)
     notes = models.CharField(max_length=1000, blank=True, null=True)
     date = models.DateField(auto_now_add=True)
 

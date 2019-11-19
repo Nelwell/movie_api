@@ -18,14 +18,14 @@ class VehicleMaintenanceViewSet(viewsets.ModelViewSet):
     serializer_class = VehicleMaintenanceSerializer
     permission_classes = [IsAuthenticated]
 
-    def get_queryset(self):
-        return VehicleMaintenance.objects.filter(user=self.request.user).order_by('date')
+    # def get_queryset(self):
+    #     return VehicleMaintenance.objects.filter(user=self.request.user).order_by('date')
 
     def create(self, request):
         try:
             print("creating", request.data)
             vehicle = VehicleMaintenance(date=request.data['date'], task=request.data['service'], 
-            user=request.user, notes=request.data['notes'], vehicle=request.data['vehicle'], location=request.data['location']).save()
+            user=request.user, mileage=request.data['mileage'], notes=request.data['notes'], vehicle=request.data['vehicle'], location=request.data['location']).save()
             return Response(vehicle, status=status.HTTP_201_CREATED)
         except IntegrityError as e:
             print(e)
