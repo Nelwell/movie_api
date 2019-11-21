@@ -6,9 +6,9 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 class VehicleMaintenance(models.Model):
     user = models.ForeignKey('auth.User', blank=False, on_delete=models.CASCADE)
     vehicle = models.CharField(max_length=200, blank=False, null=False)
-    location = models.CharField(max_length=200, blank=False, null="Self")
+    location = models.CharField(max_length=200, blank=False, null=False)
     service = models.CharField(max_length=200, blank=False, null=False)
-    mileage = models.IntegerField(blank=False, null=0)
+    mileage = models.IntegerField(blank=False, null=False)
     notes = models.CharField(max_length=1000, blank=True, null=True)
     date = models.DateField(auto_now_add=True)
 
