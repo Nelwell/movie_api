@@ -18,5 +18,5 @@ class VehicleMaintenance(models.Model):
     # class Meta:
     #     unique_together = [ ['user', 'name' ] ]
 
-    # def __str__(self):
-    #     return f'Movie {self.id}. Name: {self.name} rating: {self.rating} belongs to {self.user}'
+    def __str__(self):
+        return f'vehicle {self.vehicle}. service: {self.service} mileage: {self.mileage} belongs to {self.user}'
