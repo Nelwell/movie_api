@@ -19,4 +19,4 @@ class VehicleMaintenance(models.Model):
     #     unique_together = [ ['user', 'name' ] ]
 
     def __str__(self):
-        return f'vehicle {self.vehicle}. service: {self.service} mileage: {self.mileage} belongs to {self.user}'
+        return f'Vehicle: {self.vehicle}. Last Service: {self.service} Mileage: {self.mileage}' # belongs to {self.user}'
