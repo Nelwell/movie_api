@@ -3,6 +3,8 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 
+# objects = models.Manager()
+
 class VehicleMaintenance(models.Model):
     user = models.ForeignKey('auth.User', blank=False, on_delete=models.CASCADE)
     vehicle = models.CharField(max_length=200, blank=False, null=False)
@@ -19,4 +21,4 @@ class VehicleMaintenance(models.Model):
     #     unique_together = [ ['user', 'name' ] ]
 
     def __str__(self):
-        return f'Vehicle: {self.vehicle}. Last Service: {self.service} Mileage: {self.mileage}' # belongs to {self.user}'
+        return f'Vehicle: {self.vehicle}. Maintenance Performed: {self.service}. Mileage: {self.mileage}.' # belongs to {self.user}'

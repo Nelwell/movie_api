@@ -18,8 +18,8 @@ class VehicleMaintenanceViewSet(viewsets.ModelViewSet):
     serializer_class = VehicleMaintenanceSerializer
     permission_classes = [IsAuthenticated]
 
-    # def get_queryset(self):
-    #     return VehicleMaintenance.objects.filter(user=self.request.user).order_by('date')
+    def get_queryset(self):
+        return VehicleMaintenance.objects.filter(user=self.request.user).order_by('date')
 
     def create(self, request):
         try:
