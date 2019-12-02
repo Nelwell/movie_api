@@ -24,8 +24,8 @@ class VehicleMaintenanceViewSet(viewsets.ModelViewSet):
     def create(self, request):
         try:
             print("creating", request.data)
-            vehicle = VehicleMaintenance(date=request.data['date'], task=request.data['service'], 
-            user=request.user, mileage=request.data['mileage'], notes=request.data['notes'], vehicle=request.data['vehicle'], location=request.data['location']).save()
+            vehicle = VehicleMaintenance(date=request.data['date'], service=request.data['service'], user=request.user, mileage=request.data['mileage'], 
+            notes=request.data['notes'], vehicle=request.data['vehicle'], location=request.data['location']).save()
             return Response(vehicle, status=status.HTTP_201_CREATED)
         except IntegrityError as e:
             print(e)
